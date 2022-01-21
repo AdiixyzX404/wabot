@@ -64,7 +64,7 @@ var ucapanWaktu = 'Selamat malam'
           sec.push({
             "rows": [
               {
-                "title": "List Menu",
+                "title": "All Menu",
                 "description": "", 
                 "rowId": `${data.prefix}listmenu`
               }, 
@@ -142,7 +142,7 @@ var ucapanWaktu = 'Selamat malam'
               })
           	let po = client.prepareMessageFromContent(data.from, {
 				  "listMessage":{
-                  "title": `MENU J-BOT`,
+                  "title": `MENU ADII-BOT`,
                   "description": `${ucapanWaktu} kak *${data.pushname}*`,
                   "buttonText": "MENU!",
                   "listType": "SINGLE_SELECT",
@@ -337,7 +337,7 @@ var ucapanWaktu = 'Selamat malam'
 			const mediaMsg = await client.prepareMessageMedia(await getBuffer(res.data.url), 'imageMessage')
             const buttonMessage = {
 			      contentText: 'Hentai',
-				  footerText: 'Press the button below to get a random hentai image',
+				  footerText: 'Press the button below to get a random hentai image. btw tobat banh',
                         "contextInfo": {
                               participant: data.sender,
                               stanzaId: data.message.key.id,
@@ -368,7 +368,7 @@ var ucapanWaktu = 'Selamat malam'
 			const { title, synopsis, episodes, url, rated, score, image_url } = damta.results[0]
 			Client.sendFileFromUrl(data.from, image_url, 'p.jpg', `*Anime found!*\n\n*Title:* ${title}\n*Episodes:* ${episodes}\n*Rating:* ${rated}\n*Score:* ${score}\n*Synopsis:* ${synopsis}\n*URL*: ${url}`, data.message)
             } catch(e) {
-                data.reply('Anime not found')
+                data.reply('Anime not found karena lo wibu')
             }
 		})
         Client.cmd.on('manga', async (data) => {
@@ -381,7 +381,7 @@ var ucapanWaktu = 'Selamat malam'
 			const { title, synopsis, chapters, url, rated, score, image_url } = damta.results[0]
 			Client.sendFileFromUrl(data.from, image_url, 'p.jpg', `*Manga found!*\n\n*Title:* ${title}\n*Chapters:* ${chapters}\n*Rating:* ${rated}\n*Score:* ${score}\n*Synopsis:* ${synopsis}\n*URL*: ${url}`, data.message)
             } catch(e) {
-                data.reply('Manga not found')
+                data.reply('Manga not found karena lo wibu')
             }
 		})
         Client.cmd.on('chara', async (data) => {
@@ -394,7 +394,7 @@ var ucapanWaktu = 'Selamat malam'
 			const { name, alternative_names, url, image_url } = damta.results[0]
 			Client.sendFileFromUrl(data.from, image_url, 'p.jpg', `*Character found!*\n\n*Name:* ${name}\n*Alternative names:* ${alternative_names}\n*URL*: ${url}`, data.message)
             } catch(e) {
-                data.reply('Character not found')
+                data.reply('Character not found karena lo wibu')
             }
 		})
         /*DOWNLOADER
@@ -533,8 +533,8 @@ Client.sendFileFromUrl(data.from, `${ytm.link}`, `${ytm.title} - Download.mp4`, 
             } else {
               		let po = client.prepareMessageFromContent(data.from, {
 					"listMessage":{
-                  "title": `ASUPAN MENU`,
-                  "description": `Menu Asupan nya kak ${data.pushname}`,
+                  "title": `ASUPAN`,
+                  "description": `Pilih Asupan nya kak ${data.pushname}`,
                   "buttonText": "Klik Disini",
                   "listType": "SINGLE_SELECT",
                   "sections": [
@@ -639,7 +639,7 @@ Client.sendFileFromUrl(data.from, `${ytm.link}`, `${ytm.title} - Download.mp4`, 
                            }, 
                            {
                              "title": "3", 
-                             "description": "Random Image BTS", 
+                             "description": "Random Image BTS. Dasar plastick", 
                              "rowId": `$${data.prefix + data.command} 3`
                            }, 
                            {
@@ -761,13 +761,7 @@ Client.sendFileFromUrl(data.from, `${ytm.link}`, `${ytm.title} - Download.mp4`, 
             data.reply(`Hai @${data.sender.split('@')[0]} 👋🏻\n Limit anda tersisa ${limits || 30}\nLimit setiap hari di reset jam 00.00\nJika anda ingin mendapatkan unlimited limit silahkan chat owner bot ketik !owner`)
         })
         Client.cmd.on('sourcecode', async (data) => {
-		data.reply(`Bot ini di buat dengan bahasa pemrograman Node.js / JavaScript
-
-Original source code bot : https://github.com/justpiple/whatsapp-bot
-
-Source code yang dipakai : https://github.com/Dvnz99/wabot
-
-Apabila terjadi error, kalian bisa menghubungi owner bot ketik ${data.prefix}owner`)
+		data.reply(`idk what esce that i use`)
 		})
         /*OWNER*/
         Client.cmd.on('setpp', async (data) => {
@@ -862,7 +856,7 @@ Apabila terjadi error, kalian bisa menghubungi owner bot ketik ${data.prefix}own
             var ext = data.isQuotedImage ? 'jpg' : 'mp4'
             list.forEach(async dataC => {
                 if(mediaBuffer) Client.sendFileFromBase64(dataC.jid, mediaBuffer.toString('base64'), `bc.${ext}`, `*BOT BROADCAST*\n\n${data.body} ${dataC.jid.endsWith('@g.us') ?'\n\n_#izin admin grup _*'+dataC.name+'*_' : ''}`)
-                else Client.sendText(dataC.jid, `*BOT BROADCAST*\n\n${data.body}\n\n_#izin admin grup *${dataC.name}*_`)
+                else Client.sendText(dataC.jid, `*BOT ADII BROADCAST*\n\n${data.body}\n\n_#izin admin grup *${dataC.name}*_`)
             })
         })
         Client.cmd.on('join', async (data) => {
@@ -953,7 +947,7 @@ Apabila terjadi error, kalian bisa menghubungi owner bot ketik ${data.prefix}own
             if(!data.isGroup) return data.reply(mess.group)
             timesNow = moment(data.t * 1000).format('YYYY-MM-DD HH:mm:ss')
             afkJs.addAfk(data.from, data.sender, data.body, timesNow)
-            Client.sendText(data.from, "```" + `${data.pushname} [@${data.sender.split('@')[0]}] sedang AFK\n\nAlasan: ${data.body}\nTime: ${timesNow}` + "```")
+            Client.sendText(data.from, "```" + `@${data.sender.split('@')[0]} sedang AFK\n\nAlasan: ${data.body}\nTime: ${timesNow}` + "```")
         })
 	     Client.cmd.on('welcome', (data) => {
             if(!data.isGroup) return data.reply(mess.admin)
@@ -972,7 +966,7 @@ Apabila terjadi error, kalian bisa menghubungi owner bot ketik ${data.prefix}own
             } else {
 				let po = client.prepareMessageFromContent(data.from, {
 					"listMessage":{
-                  "title": "*WHATSAPP-BOT*",
+                  "title": "*WELCOME MODE*",
                   "description": "pilh on/off",
                   "buttonText": "COMMANDS",
                   "listType": "SINGLE_SELECT",
@@ -1017,7 +1011,7 @@ Apabila terjadi error, kalian bisa menghubungi owner bot ketik ${data.prefix}own
 			})
 			let po = client.prepareMessageFromContent(data.from, {
 				  "listMessage":{
-                  "title": "*YOUTUBE DOWNLOAD*",
+                  "title": "*YOUTUBE DOWNLOADER*",
                   "description": `*Result for : ${data.body}*\n*Download video by click button bellow*`,
                   "buttonText": "Result",
                   "listType": "SINGLE_SELECT",
@@ -1042,7 +1036,7 @@ Apabila terjadi error, kalian bisa menghubungi owner bot ketik ${data.prefix}own
             } else {
 				let po = client.prepareMessageFromContent(data.from, {
 					"listMessage":{
-                  "title": "*WHATSAPP-BOT*",
+                  "title": "*MESSAGE LEAVE MODE*",
                   "description": "pilh on/off",
                   "buttonText": "COMMANDS",
                   "listType": "SINGLE_SELECT",
@@ -1080,7 +1074,7 @@ Apabila terjadi error, kalian bisa menghubungi owner bot ketik ${data.prefix}own
             } else {
 				let po = client.prepareMessageFromContent(data.from, {
 					"listMessage":{
-                  "title": "*WHATSAPP-BOT*",
+                  "title": "*ANTI TAGALL*",
                   "description": "pilh on/off",
                   "buttonText": "COMMANDS",
                   "listType": "SINGLE_SELECT",
@@ -1118,7 +1112,7 @@ Apabila terjadi error, kalian bisa menghubungi owner bot ketik ${data.prefix}own
             } else {
 				let po = client.prepareMessageFromContent(data.from, {
 					"listMessage":{
-                  "title": "*WHATSAPP-BOT*",
+                  "title": "*ANTI LINK*",
                   "description": "pilh on/off",
                   "buttonText": "COMMANDS",
                   "listType": "SINGLE_SELECT",
@@ -1158,7 +1152,7 @@ Apabila terjadi error, kalian bisa menghubungi owner bot ketik ${data.prefix}own
             } else {
 				let po = client.prepareMessageFromContent(data.from, {
 					"listMessage":{
-                  "title": "*WHATSAPP-BOT*",
+                  "title": "*GROUP MODE*",
                   "description": "pilh open/close",
                   "buttonText": "COMMANDS",
                   "listType": "SINGLE_SELECT",
@@ -1434,13 +1428,6 @@ _${configs.igUrl}_
 *My Github :*
 _${configs.githubUrl}_
 ┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅
-*THANKS TO :*
-• WhatsApp
-• Akmalz
-• BryanRfly
-• Ben
-• Manurios
-• All Rest Api And Module Providers
 `
 infonye = info(data.prefix)
 data.reply(teksnya + infonye)
@@ -1557,31 +1544,19 @@ let yo = client.user
 
 teksny = `${ucapanWaktu} @${num.split("@")[0]}, Have a nice day
 
-┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅
 *⌦ USER INFO*
 • _Name : ${data.pushname}_
 • _Status : ${prems}_
 • _Limit : ${limite}_
 • _Time : ${time2} WIB_
 
-┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅
 *⌦ BOT INFO :*
 • _Bot Name : ${configs.botname}_
 • _Ping : ${latensip.toFixed(4)} Second_
 • _${totalhit}_
 • _Total User : ${pendaftar.length} User_
+• _Runtime : ${formater3(uptime3)}_
 
-*Runtime Bot*
-_${formater3(uptime3)}_
-
-┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅
-*⌦ ATTENTION*
-• _Don\'t spam bot_
-• _Sorry if it has a lot of bugs_
-• _You can get the source code of this bot on my github_
-• _If you are using whatsapp mod/old version, you can type ${data.prefix}listmenu_
-
-┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅
 *⌦ INSTAGRAM*
 _${configs.igUrl}_
 
@@ -2307,7 +2282,7 @@ var ucapanWaktu = 'Selamat malam'
           sec.push({
             "rows": [
               {
-                "title": "List Menu",
+                "title": "All Menu",
                 "description": "", 
                 "rowId": `#listmenu`
               }, 
@@ -2370,7 +2345,7 @@ var ucapanWaktu = 'Selamat malam'
               })
           	let po = client.prepareMessageFromContent(from, {
 				  "listMessage":{
-                  "title": `MENU J-BOT`,
+                  "title": `MENU Adii-BOT`,
                   "description": `${ucapanWaktu} kak ${pushname}`,
                   "buttonText": "MENU!",
                   "listType": "SINGLE_SELECT",
